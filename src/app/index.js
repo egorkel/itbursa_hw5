@@ -16,11 +16,13 @@ angular.module('hw5', ['ui.router', 'ui.bootstrap', 'permission'])
       return authServ.isAdmin();
     });
 
-    // При нарушении прав доступа разлогиниваемся
     $rootScope.$on('$stateChangePermissionDenied', function (toState, toParams) {
       if (toParams.name === 'login') {
+        // Если вошедший пользователь пытается попасть на login,
+        // перебрасываем его на main
         $state.go('main');
       } else {
+        // При нарушении прав доступа разлогиниваемся
         authServ.logout();
         $state.go('login');
       }

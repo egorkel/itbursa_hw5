@@ -10,12 +10,6 @@ angular.module('hw5')
         url: 'page2',
         templateUrl: 'app/page2/page2.html',
         controller: 'page2Ctrl'
-        //data: {
-        //  permissions: {
-        //    only: ['user', 'admin'],
-        //    redirectTo: 'login'
-        //  }
-        //}
       });
 
   });

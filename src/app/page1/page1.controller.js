@@ -13,12 +13,6 @@ angular.module('hw5')
         url: 'page1',
         templateUrl: 'app/page1/page1.html',
         controller: 'page1Ctrl'
-        //data: {
-        //  permissions: {
-        //    only: perms,
-        //    redirectTo: 'login'
-        //  }
-        //}
       });
 
     var menuItem = {
