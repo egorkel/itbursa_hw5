@@ -1,36 +1,34 @@
-<div ng-if="role !== 'anonymous'" class="row bg-primary my-header">
+<div class="row bg-primary my-header">
   <!--<div ng-hide="hide">-->
   <div class="col-md-6 my-navbar">
 
-    <div class="my-navbar-item">
-      <div class="dropdown" dropdown>
-        <a href class="dropdown-toggle" dropdown-toggle>Страницы<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a ui-sref="main.page1">Страница 1</a></li>
-          <li><a ui-sref="main.page2">Страница 2</a></li>
-        </ul>
-      </div>
-    </div>
+    <div ng-repeat="navItem in items track by $index">
 
-    <!--<div ng-repeat=""></div>-->
-      <div ng-if="!dd" class="my-navbar-item">
-        <a ui-sref="main.admin">Админ</a>
+      <div ng-if="singleItem(navItem.items)" class="my-navbar-item">
+        <a ui-sref={{navItem.items[0].state}}>{{navItem.items[0].name}}</a>
       </div>
 
-      <div ng-if="dd" class="my-navbar-item">
+      <div ng-if="ddItem(navItem.items)" class="my-navbar-item">
         <div class="dropdown" dropdown>
-          <a href class="dropdown-toggle" dropdown-toggle>Админ<span class="caret"></span></a>
+          <a href class="dropdown-toggle" dropdown-toggle>
+            {{navItem.items[0].name}}<span class="caret"></span>
+          </a>
           <ul class="dropdown-menu">
-            <!--<li ng-repeat=""><a ui-sref="page1">Страница 1</a></li>-->
+            <li ng-repeat="subItem in navItem.items">
+              <a ng-if="!$first" ui-sref={{subItem.state}}>{{subItem.name}}</a>
+            </li>
           </ul>
         </div>
       </div>
-    <!--</div>-->
+
+    </div>
 
   </div>
+
   <div class="col-md-5 text-right my-navbar-item">
     {{username}}
   </div>
+
   <div class="col-md-1 text-right my-navbar-btn">
     <button class="btn btn-default" ng-click="exit()">Выход</button>
   </div>

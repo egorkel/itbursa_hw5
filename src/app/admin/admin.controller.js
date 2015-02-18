@@ -25,7 +25,7 @@ angular.module('hw5')
       items: [
         {
           name: 'Админ',
-          state: 'admin',
+          state: 'main.admin',
           roles: perms
         }
       ]

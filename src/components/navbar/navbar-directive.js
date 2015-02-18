@@ -5,7 +5,7 @@ angular.module('hw5')
     return {
       restrict: 'E',
       templateUrl: 'components/navbar/navbar.html',
-      scope: {},
+      //scope: {},
       controller: 'navbarCtrl'
     };
   });

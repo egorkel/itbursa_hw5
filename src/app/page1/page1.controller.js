@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('hw5')
-  .controller('page1Ctrl', function () {})
+  .controller('page1Ctrl', function () {
+  })
 
   .config(function ($stateProvider, menuProvider) {
     var perms = ['user', 'admin'];
@@ -30,12 +31,12 @@ angular.module('hw5')
         },
         {
           name: 'Страница 1',
-          state: 'page1',
+          state: 'main.page1',
           roles: perms
         },
         {
           name: 'Страница 2',
-          state: 'page2',
+          state: 'main.page2',
           roles: perms
         }
       ]
