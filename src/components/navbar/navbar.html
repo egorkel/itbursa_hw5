@@ -1,0 +1,24 @@
+<div class="row bg-primary my-header">
+  <!--<div ng-hide="hide">-->
+  <div class="col-md-6 my-navbar">
+
+    <div class="dropdown my-navbar-item" dropdown>
+      <a href class="dropdown-toggle" dropdown-toggle>Страницы<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a ui-sref="page1">Страница 1</a></li>
+        <li><a ui-sref="page2">Страница 2</a></li>
+      </ul>
+    </div>
+
+    <div class="my-navbar-item">
+      <a ui-sref="admin">Админ</a>
+    </div>
+
+  </div>
+  <div class="col-md-5 text-right my-navbar-item">
+    {{username}}
+  </div>
+  <div class="col-md-1 text-right my-navbar-btn">
+    <button class="btn btn-default" ng-click="exit()">Выход</button>
+  </div>
+</div>
