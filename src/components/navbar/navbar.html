@@ -1,18 +1,31 @@
-<div class="row bg-primary my-header">
+<div ng-if="role !== 'anonymous'" class="row bg-primary my-header">
   <!--<div ng-hide="hide">-->
   <div class="col-md-6 my-navbar">
 
-    <div class="dropdown my-navbar-item" dropdown>
-      <a href class="dropdown-toggle" dropdown-toggle>Страницы<span class="caret"></span></a>
-      <ul class="dropdown-menu">
-        <li><a ui-sref="page1">Страница 1</a></li>
-        <li><a ui-sref="page2">Страница 2</a></li>
-      </ul>
+    <div class="my-navbar-item">
+      <div class="dropdown" dropdown>
+        <a href class="dropdown-toggle" dropdown-toggle>Страницы<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a ui-sref="main.page1">Страница 1</a></li>
+          <li><a ui-sref="main.page2">Страница 2</a></li>
+        </ul>
+      </div>
     </div>
 
-    <div class="my-navbar-item">
-      <a ui-sref="admin">Админ</a>
-    </div>
+    <!--<div ng-repeat=""></div>-->
+      <div ng-if="!dd" class="my-navbar-item">
+        <a ui-sref="main.admin">Админ</a>
+      </div>
+
+      <div ng-if="dd" class="my-navbar-item">
+        <div class="dropdown" dropdown>
+          <a href class="dropdown-toggle" dropdown-toggle>Админ<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <!--<li ng-repeat=""><a ui-sref="page1">Страница 1</a></li>-->
+          </ul>
+        </div>
+      </div>
+    <!--</div>-->
 
   </div>
   <div class="col-md-5 text-right my-navbar-item">

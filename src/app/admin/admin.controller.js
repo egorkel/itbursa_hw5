@@ -7,9 +7,9 @@ angular.module('hw5')
     var perms = ['admin'];
 
     $stateProvider
-      .state('admin',
+      .state('main.admin',
       {
-        url: '/admin',
+        url: 'admin',
         templateUrl: 'app/admin/admin.html',
         controller: 'adminCtrl',
         data: {

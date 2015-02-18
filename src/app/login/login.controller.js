@@ -1,5 +1,7 @@
 'use strict';
 
+/*global alert*/
+
 angular.module('hw5')
   .controller('loginCtrl', function ($scope, $state, authServ) {
 
@@ -8,7 +10,7 @@ angular.module('hw5')
     $scope.login = function () {
       authServ.login($scope.userName).then(
         function () {
-          $state.go('page1');
+          $state.go('main');
         },
         function (error) {
           alert(error);
@@ -18,7 +20,7 @@ angular.module('hw5')
 
   })
 
-  .config(function ($stateProvider, menuProvider) {
+  .config(function ($stateProvider) {
     $stateProvider
       .state('login',
       {
@@ -28,11 +30,8 @@ angular.module('hw5')
         data: {
           permissions: {
             only: ['anonymous'],
-            redirectTo: 'page1'
+            redirectTo: 'main'
           }
         }
       });
-
-    menuProvider.add(4, 'Выход', 'login', 1);
-
   });

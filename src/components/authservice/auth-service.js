@@ -30,6 +30,18 @@ angular.module('hw5')
 
       getUser: function () {
         return $window.localStorage.getItem('username');
+      },
+
+      getRole: function () {
+        var role = 'anonymous';
+        if (!!$window.localStorage.getItem('username')) {
+          role = 'user';
+          if ($window.localStorage.getItem('username') === 'admin') {
+            role = 'admin';
+          }
+        }
+
+        return role;
       }
 
     };

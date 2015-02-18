@@ -5,17 +5,17 @@ angular.module('hw5')
 
   .config(function ($stateProvider) {
     $stateProvider
-      .state('page2',
+      .state('main.page2',
       {
-        url: '/page2',
+        url: 'page2',
         templateUrl: 'app/page2/page2.html',
-        controller: 'page2Ctrl',
-        data: {
-          permissions: {
-            only: ['user', 'admin'],
-            redirectTo: 'login'
-          }
-        }
+        controller: 'page2Ctrl'
+        //data: {
+        //  permissions: {
+        //    only: ['user', 'admin'],
+        //    redirectTo: 'login'
+        //  }
+        //}
       });
 
   });

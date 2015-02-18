@@ -13,12 +13,7 @@ angular.module('hw5')
     };
 
     this.add = function(menuItem) {
-      //var newItem = {
-      //  id: id,
-      //  name: name,
-      //  state: state,
-      //  permissions: perm
-      //};
-      //items.push(newItem);
+      var newItem = _.clone(menuItem);
+      items.push(newItem);
     };
   });

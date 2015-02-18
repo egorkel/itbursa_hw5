@@ -17,9 +17,13 @@ angular.module('hw5', ['ui.router', 'ui.bootstrap', 'permission'])
     });
 
     // При нарушении прав доступа разлогиниваемся
-    $rootScope.$on('$stateChangePermissionDenied', function () {
-      authServ.logout();
-      $state.go('login');
+    $rootScope.$on('$stateChangePermissionDenied', function (toState, toParams) {
+      if (toParams.name === 'login') {
+        $state.go('main');
+      } else {
+        authServ.logout();
+        $state.go('login');
+      }
     });
 
   })

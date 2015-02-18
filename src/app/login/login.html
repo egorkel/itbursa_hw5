@@ -1,7 +1,10 @@
-<hr style="border-width: medium">
-<form class="form-inline" name="loginForm" ng-submit="loginForm.$valid && login()" novalidate>
-  <div class="form-group" ng-class="{'has-success': loginForm.$valid, 'has-error': loginForm.$invalid}">
-    <input class="form-control" type="text" ng-model="userName" name="userName" placeholder="Enter username" required>
-    <button class="btn btn-primary" ng-class="{'active': loginForm.$valid, 'disabled': loginForm.$invalid}" type="submit">Login</button>
-  </div>
-</form>
+<div class="row">
+  <div class="col-md-4"></div>
+  <form class="col-md-4 text-center" name="loginForm" ng-submit="loginForm.$valid && login()" novalidate>
+    <div class="form-group" ng-class="{'has-success': loginForm.$valid, 'has-error': loginForm.$invalid}">
+      <label for="username"><h3>Вход</h3></label><br>
+      <input class="form-control" id="username" type="text" ng-model="userName" name="userName" placeholder="Enter username" required>
+      <button style="width: 100%; margin-top: 10px" class="btn btn-primary" ng-class="{'active': loginForm.$valid, 'disabled': loginForm.$invalid}" type="submit">Войти</button>
+    </div>
+  </form>
+</div>

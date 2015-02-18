@@ -7,17 +7,17 @@ angular.module('hw5')
     var perms = ['user', 'admin'];
 
     $stateProvider
-      .state('page1',
+      .state('main.page1',
       {
-        url: '/page1',
+        url: 'page1',
         templateUrl: 'app/page1/page1.html',
-        controller: 'page1Ctrl',
-        data: {
-          permissions: {
-            only: perms,
-            redirectTo: 'login'
-          }
-        }
+        controller: 'page1Ctrl'
+        //data: {
+        //  permissions: {
+        //    only: perms,
+        //    redirectTo: 'login'
+        //  }
+        //}
       });
 
     var menuItem = {
